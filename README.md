@@ -6,7 +6,7 @@ Elektronischer Würfel für den Section77 Lötkurs
 Umgerechnet auf einen Bausatz
 
 Anz. | Reichelt Bestellnummer | Bezeichnung                                | Preis
------------------------------------------------------------------------------------
+-----|------------------------|--------------------------------------------|-------
 1    | ATTINY 13A-PU          | Atmel AVR-RISC-Controller                  | 0,99 €
 7    | SLH 56 RT              | LED, 5mm, superhell, eingefärbt, klar, rot | 0,63 €
 1    | BPW 40                 | Fototransistor, Plastikgehäuse, bedrahtet  | 0,29 €
@@ -18,3 +18,4 @@ Anz. | Reichelt Bestellnummer | Bezeichnung                                | Pre
 3    | aus GP AL40 AA         | Alkaline Mignon Aus 40er Pack              | 0,79€
 1    | HALTER 3XUM3-DK        | Halter für 3 Mignonzellen (AA), Druckknopf | 0,40 €
 1    | CLIP HQ9V-T            | Batterieclip für 9-Volt-Block, High-Quality, T-Form | 0,30€
+
