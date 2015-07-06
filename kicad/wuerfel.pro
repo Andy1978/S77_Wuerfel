@@ -1,4 +1,4 @@
-update=So 05 Jul 2015 16:58:19 CEST
+update=Mo 06 Jul 2015 18:43:47 CEST
 version=1
 last_client=eeschema
 [cvpcb]
@@ -84,4 +84,3 @@ LibName27=opto
 LibName28=atmel
 LibName29=contrib
 LibName30=valves
-LibName31=Gajda_opto
