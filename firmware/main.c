@@ -136,5 +136,5 @@ int main(void)
       // nichts tun, es wird alles in den Interrupts erledigt
       ;
     }
-    return 0;
+  return 0;
 }

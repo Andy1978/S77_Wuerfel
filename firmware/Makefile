@@ -210,6 +210,10 @@ clean:
 	$(TARGET).map $(TARGET).sym $(TARGET).lss \
 	$(OBJ) $(LST) $(SRC:.c=.s) $(SRC:.c=.d)
 
+# Style: run astyle
+style:
+	astyle --style=gnu -s2 -n $(SRC)
+
 depend:
 	if grep '^# DO NOT DELETE' $(MAKEFILE) >/dev/null; \
 	then \
