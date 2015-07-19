@@ -1,6 +1,8 @@
 # S77_Wuerfel
 Elektronischer Würfel für den Section77 Lötkurs
 
+http://tech-chat.de/files/s77_wuerfel.ogg
+
 ## Bauteile
 
 Umgerechnet auf einen Bausatz
