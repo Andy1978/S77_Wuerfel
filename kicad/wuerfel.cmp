@@ -1,0 +1,136 @@
+Cmp-Mod V01 Created by CvPcb (22-Jun-2014 BZR 4027)-stable date = So 19 Jul 2015 17:25:54 CEST
+
+BeginCmp
+TimeStamp = /559943E1;
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /55994415;
+Reference = D2;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /55994408;
+Reference = D3;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /559943FB;
+Reference = D4;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /559943EE;
+Reference = D5;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /559943D0;
+Reference = D6;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /5599348D;
+Reference = D7;
+ValeurCmp = LED;
+IdModule  = LED-5MM;
+EndCmp
+
+BeginCmp
+TimeStamp = /55993427;
+Reference = IC1;
+ValeurCmp = ATTINY13A-P;
+IdModule  = DIP8;
+EndCmp
+
+BeginCmp
+TimeStamp = /55994683;
+Reference = Q1;
+ValeurCmp = BPW40;
+IdModule  = TO92;
+EndCmp
+
+BeginCmp
+TimeStamp = /559943E7;
+Reference = R1;
+ValeurCmp = 220R;
+IdModule  = R6;
+EndCmp
+
+BeginCmp
+TimeStamp = /5599441B;
+Reference = R2;
+ValeurCmp = 220R;
+IdModule  = R7;
+EndCmp
+
+BeginCmp
+TimeStamp = /5599440E;
+Reference = R3;
+ValeurCmp = 220R;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /55994401;
+Reference = R4;
+ValeurCmp = 220R;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /559943F4;
+Reference = R5;
+ValeurCmp = 220R;
+IdModule  = R3;
+EndCmp
+
+BeginCmp
+TimeStamp = /559943D6;
+Reference = R6;
+ValeurCmp = 220R;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /559934D7;
+Reference = R7;
+ValeurCmp = 220R;
+IdModule  = R6;
+EndCmp
+
+BeginCmp
+TimeStamp = /559946F1;
+Reference = R8;
+ValeurCmp = 12K;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /55AB861B;
+Reference = R9;
+ValeurCmp = 10K;
+IdModule  = R1;
+EndCmp
+
+BeginCmp
+TimeStamp = /5599470F;
+Reference = RV1;
+ValeurCmp = 250K;
+IdModule  = ;
+EndCmp
+
+EndListe

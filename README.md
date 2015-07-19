@@ -19,19 +19,24 @@ Anz. | Reichelt Bestellnummer | Bezeichnung                                | Pre
 1    | HALTER 3XUM3-DK        | Halter für 3 Mignonzellen (AA), Druckknopf | 0,40 €
 1    | CLIP HQ9V-T            | Batterieclip für 9-Volt-Block, High-Quality, T-Form | 0,30€
 
-## Build firmware
+## Abhängigkeiten unter GNU/Linux
 
-### GNU/Linux dependencies
-* avr-gcc
+* avr-gcc (Compiler für AVR µController)
 * avr-libc
-* avrdude
+* avrdude (zum Übertragen der firmware)
+* kicad (Für den Schaltplan)
 
 In Debian basierten Distro z.B. über
 ```
 sudo apt-get update
-sudo apt-get install gcc-avr avr-libc avrdude
+sudo apt-get install gcc-avr avr-libc avrdude kicad
+```
+zu installieren.
+
+## Firmware compilieren und mit avrdude über USBasp flashen
+```
+cd src
+make
+make program
 ```
 
-### Windows
-
-mit WinAVR oder Atmel Studio
