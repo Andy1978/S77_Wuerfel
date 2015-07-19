@@ -36,12 +36,12 @@
 
   Somit ergibt sich:
   Wert -> low tetrade PORTB
-  1    -> 0b0111
-  2    -> 0b1110
-  3    -> 0b0110
-  4    -> 0b1010
-  5    -> 0b0010
-  6    -> 0b1000
+  1    -> 0b0111 = 0x7
+  2    -> 0b1110 = 0xE
+  3    -> 0b0110 = 0x6
+  4    -> 0b1010 = 0xA
+  5    -> 0b0010 = 0x2
+  6    -> 0b1000 = 0x8
 
   * Switch gegen GND an PB5, Pull-Up aktivieren
   * Phototransistor BPW40 an PB4 (ADC2)
@@ -51,6 +51,10 @@
 #include <stdlib.h>
 #include <avr/io.h>
 #include <avr/interrupt.h>
+#include <util/delay.h>
+
+// Siehe Erklärung oben
+char numbers[7] = {0xF, 0x7, 0xE, 0x6, 0xA, 0x2, 0x8};
 
 ISR(TIM0_COMPA_vect) //1kHz
 {
@@ -96,9 +100,19 @@ int main(void)
   //enable global interrupts
   sei();
 
+  int cnt = 0;
   for (;;)    /* main event loop */
     {
-      //
+      PORTB = (PORTB & 0xF0) | numbers[cnt];
+
+      cnt++;
+      if (cnt>6)
+        cnt = 0;
+
+      int k;
+      for (k=0;k<100;++k)
+        _delay_ms (10);
+
     }
     return 0;
 }
