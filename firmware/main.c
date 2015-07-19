@@ -43,7 +43,6 @@
   5    -> 0b0010 = 0x2
   6    -> 0b1000 = 0x8
 
-  * Switch gegen GND an PB5, Pull-Up aktivieren
   * Phototransistor BPW40 an PB4 (ADC2)
 
 ***********************************************************************/
@@ -56,15 +55,47 @@
 // Siehe Erklärung oben
 char numbers[7] = {0xF, 0x7, 0xE, 0x6, 0xA, 0x2, 0x8};
 
-ISR(TIM0_COMPA_vect) //1kHz
-{
+// F_CPU ist 1.2 MHz (interner RC Oszillator, s.a. Makefile)
+// Clk-Prescaler ist 8 (siehe TCCR0B)
+// OCR0A ist 150
+//
+// Damit ergibt sich eine Aufruffrequenz von
+// 1200000 / 8 / 150 = 1kHz
 
+ISR(TIM0_COMPA_vect)
+{
+  /*
+  // Im Sekundentakt von 0..6 zählen
+  static int c=0;
+  static int step=0;
+  c++;
+
+  if (c==1000)
+    {
+      PORTB = (PORTB & 0xF0) | numbers[step++];
+
+      if (step>6)
+        step = 0;
+      c = 0;
+    }
+  */
 }
 
-ISR(ADC_vect) //ca. 125kHz
+// Eine normale Wandlung dauert 13 clock cycles
+// -> Aufruf mit ca. 1200000/128/13 = 721Hz
+
+ISR(ADC_vect)
 {
-  //momentan keine Verwendung für den ADC
-  //int16_t temp=ADC-512;
+  // Wenn der analoge Eingang über einen Schwellwert (0.5 * VCC) steigt,
+  // schnell durchzählen
+  static int num = 1;
+  if (ADC > 512)
+    {
+      PORTB = (PORTB & 0xF0) | numbers[num++];
+
+      if (num > 6)
+        num = 1;
+    }
 }
 
 int main(void)
@@ -72,47 +103,38 @@ int main(void)
   // Die 4 Pins an denen die LEDs hängen sind Ausgänge
   DDRB = _BV(PB0) |  _BV(PB1) | _BV(PB2) | _BV(PB3);
 
-  // Pull-Up für den Taster
-  PORTB = 0x2F;
-
   /*** TIMER0 ***/
-  OCR0A = 250;
+  OCR0A = 150;
   //CTC = Clear Timer on Compare match S.80
   //Normal port operation, OC0A disconnected
   TCCR0A = _BV(WGM01);
 
-  //Prescaler=64 -> clk=250kHz
-  TCCR0B = _BV(CS01) | _BV(CS00);
+  //Prescaler=8 -> clk=150kHz
+  TCCR0B = _BV(CS01);
 
   //On Compare match Interrupt Enable for timer 0
   TIMSK0 |= _BV(OCIE0A);
 
   /*** ADC ***/
-  //Prescaler 128 = 125kHz ADC Clock, AutoTrigger, Interrupts enable
+  //Prescaler 128 = 9.375kHz ADC Clock, AutoTrigger, Interrupts enable
   ADCSRA = _BV(ADEN) | _BV(ADPS0) | _BV(ADPS1) | _BV(ADPS2) | _BV(ADATE) | _BV(ADSC) | _BV(ADIE);
 
-  //AVCC with external capacitor at AREF, internal 2.56V bandgap
-  //siehe S. 215
-  //ADMUX = (_BV(REFS0) | _BV(REFS1)) + 2;
-  //ADC in Free Running mode
-  //SFIOR &= ~(_BV(ADTS2) | _BV(ADTS1) | _BV(ADTS0));
+  //ADC Auto Trigger Source = Free Running
+  //ACME = 0
+  ADCSRB = 0;
+
+  // REFS0 = 0 : Vcc used as analog reference
+  // ADLAR = 0
+  // MUX = ADC2 (PB4)
+  ADMUX = 2;
 
   //enable global interrupts
   sei();
 
-  int cnt = 0;
   for (;;)    /* main event loop */
     {
-      PORTB = (PORTB & 0xF0) | numbers[cnt];
-
-      cnt++;
-      if (cnt>6)
-        cnt = 0;
-
-      int k;
-      for (k=0;k<100;++k)
-        _delay_ms (10);
-
+      // nichts tun, es wird alles in den Interrupts erledigt
+      ;
     }
     return 0;
 }

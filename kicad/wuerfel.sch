@@ -36,7 +36,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "6 jul 2015"
+Date "19 jul 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -88,12 +88,6 @@ F 3 "" H 6600 4250 60  0000 C CNN
 	1    6600 4250
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6350 4050 6600 4050
-Wire Wire Line
-	6600 4050 6600 4250
-Wire Wire Line
-	3900 2450 3900 2600
 $Comp
 L LED D6
 U 1 1 559943D0
@@ -116,8 +110,6 @@ F 3 "~" H 3600 2850 30  0000 C CNN
 	1    3600 2850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3600 2450 3600 2600
 $Comp
 L LED D1
 U 1 1 559943E1
@@ -140,8 +132,6 @@ F 3 "~" H 1550 2850 30  0000 C CNN
 	1    1550 2850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1550 2450 1550 2600
 $Comp
 L LED D5
 U 1 1 559943EE
@@ -164,8 +154,6 @@ F 3 "~" H 3150 2850 30  0000 C CNN
 	1    3150 2850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3150 2450 3150 2600
 $Comp
 L LED D4
 U 1 1 559943FB
@@ -188,8 +176,6 @@ F 3 "~" H 2850 2850 30  0000 C CNN
 	1    2850 2850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2850 2450 2850 2600
 $Comp
 L LED D3
 U 1 1 55994408
@@ -212,8 +198,6 @@ F 3 "~" H 2300 2850 30  0000 C CNN
 	1    2300 2850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2300 2450 2300 2600
 $Comp
 L LED D2
 U 1 1 55994415
@@ -236,21 +220,6 @@ F 3 "~" H 2000 2850 30  0000 C CNN
 	1    2000 2850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	2000 2450 2000 2600
-Wire Wire Line
-	2000 3100 2300 3100
-Wire Wire Line
-	2850 3100 3150 3100
-Wire Wire Line
-	3600 3100 3900 3100
-Wire Wire Line
-	1550 2050 3900 2050
-Connection ~ 2000 2050
-Connection ~ 2300 2050
-Connection ~ 2850 2050
-Connection ~ 3150 2050
-Connection ~ 3600 2050
 $Comp
 L VCC #PWR3
 U 1 1 559944A0
@@ -262,10 +231,6 @@ F 3 "" H 6600 3450 60  0000 C CNN
 	1    6600 3450
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6350 3550 6600 3550
-Wire Wire Line
-	6600 3550 6600 3450
 $Comp
 L BC547 Q1
 U 1 1 55994683
@@ -288,14 +253,12 @@ F 3 "" H 4750 3200 60  0000 C CNN
 	1    4750 3200
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	4750 3100 4750 3200
 $Comp
 L R R8
 U 1 1 559946F1
 P 4750 1850
 F 0 "R8" V 4830 1850 40  0000 C CNN
-F 1 "R" V 4757 1851 40  0000 C CNN
+F 1 "12K" V 4757 1851 40  0000 C CNN
 F 2 "~" V 4680 1850 30  0000 C CNN
 F 3 "~" H 4750 1850 30  0000 C CNN
 	1    4750 1850
@@ -306,20 +269,12 @@ L POT RV1
 U 1 1 5599470F
 P 4750 2400
 F 0 "RV1" H 4750 2300 50  0000 C CNN
-F 1 "POT" H 4750 2400 50  0000 C CNN
+F 1 "250K" H 4750 2400 50  0000 C CNN
 F 2 "~" H 4750 2400 60  0000 C CNN
 F 3 "~" H 4750 2400 60  0000 C CNN
 	1    4750 2400
 	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	4600 2400 4500 2400
-Wire Wire Line
-	4500 2400 4500 2150
-Wire Wire Line
-	4500 2150 4750 2150
-Wire Wire Line
-	4750 2150 4750 2100
 $Comp
 L VCC #PWR1
 U 1 1 55994754
@@ -331,6 +286,70 @@ F 3 "" H 4750 1500 60  0000 C CNN
 	1    4750 1500
 	1    0    0    -1  
 $EndComp
+Text Notes 1500 1850 0    60   ~ 0
+G3\n
+Text Notes 2100 1850 0    60   ~ 0
+G2
+Text Notes 2950 1850 0    60   ~ 0
+G1
+Text Notes 3700 1850 0    60   ~ 0
+G0
+$Comp
+L R R9
+U 1 1 55AB861B
+P 4100 2850
+F 0 "R9" V 4180 2850 40  0000 C CNN
+F 1 "10K" V 4107 2851 40  0000 C CNN
+F 2 "~" V 4030 2850 30  0000 C CNN
+F 3 "~" H 4100 2850 30  0000 C CNN
+	1    4100 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6350 4050 6600 4050
+Wire Wire Line
+	6600 4050 6600 4250
+Wire Wire Line
+	3900 2450 3900 2600
+Wire Wire Line
+	3600 2450 3600 2600
+Wire Wire Line
+	1550 2450 1550 2600
+Wire Wire Line
+	3150 2450 3150 2600
+Wire Wire Line
+	2850 2450 2850 2600
+Wire Wire Line
+	2300 2450 2300 2600
+Wire Wire Line
+	2000 2450 2000 2600
+Wire Wire Line
+	2000 3100 2300 3100
+Wire Wire Line
+	2850 3100 3150 3100
+Wire Wire Line
+	3600 3100 3900 3100
+Wire Wire Line
+	1550 2050 3900 2050
+Connection ~ 2000 2050
+Connection ~ 2300 2050
+Connection ~ 2850 2050
+Connection ~ 3150 2050
+Connection ~ 3600 2050
+Wire Wire Line
+	6350 3550 6600 3550
+Wire Wire Line
+	6600 3550 6600 3450
+Wire Wire Line
+	4750 3100 4750 3200
+Wire Wire Line
+	4600 2400 4500 2400
+Wire Wire Line
+	4500 2400 4500 2150
+Wire Wire Line
+	4500 2150 4750 2150
+Wire Wire Line
+	4750 2150 4750 2100
 Wire Wire Line
 	4750 1500 4750 1600
 Wire Wire Line
@@ -361,38 +380,11 @@ Wire Wire Line
 	4750 1600 3900 1600
 Wire Wire Line
 	3900 1600 3900 2050
-Text Notes 1500 1850 0    60   ~ 0
-G3\n
-Text Notes 2100 1850 0    60   ~ 0
-G2
-Text Notes 2950 1850 0    60   ~ 0
-G1
-Text Notes 3700 1850 0    60   ~ 0
-G0
-$Comp
-L SW_PUSH SW?
-U 1 1 559AB1B8
-P 4050 4350
-F 0 "SW?" H 4200 4460 50  0000 C CNN
-F 1 "SW_PUSH" H 4050 4270 50  0000 C CNN
-F 2 "~" H 4050 4350 60  0000 C CNN
-F 3 "~" H 4050 4350 60  0000 C CNN
-	1    4050 4350
-	0    -1   -1   0   
-$EndComp
-$Comp
-L GND #PWR?
-U 1 1 559AB1D0
-P 4050 4800
-F 0 "#PWR?" H 4050 4800 30  0001 C CNN
-F 1 "GND" H 4050 4730 30  0001 C CNN
-F 2 "" H 4050 4800 60  0000 C CNN
-F 3 "" H 4050 4800 60  0000 C CNN
-	1    4050 4800
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	4050 4800 4050 4650
+	4100 3100 4100 4050
 Wire Wire Line
-	4350 4050 4050 4050
+	4100 4050 4350 4050
+Wire Wire Line
+	4100 2600 4100 1600
+Connection ~ 4100 1600
 $EndSCHEMATC

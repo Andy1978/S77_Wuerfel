@@ -28,7 +28,7 @@ DEBUG = stabs
 CSTANDARD = -std=gnu99
 
 # Place -D or -U options here
-CDEFS =
+CDEFS = -D F_CPU=1200000
 
 # Place -I options here
 CINCS =
