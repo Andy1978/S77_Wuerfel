@@ -42,3 +42,9 @@ make
 make program
 ```
 
+## udev rules für USBasp
+```
+$ cat /etc/udev/rules.d/45-avrusb.rules 
+ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="05dc", MODE="0660", GROUP="plugdev"
+```
+
