@@ -1,7 +1,7 @@
 # S77_Wuerfel
 Elektronischer Würfel für den Section77 Lötkurs
 
-http://tech-chat.de/files/s77_wuerfel.ogg
+http://tech-chat.de/files/VID_20150719_164159_Section77_Wuerfel.mp4
 
 ## Bauteile
 
